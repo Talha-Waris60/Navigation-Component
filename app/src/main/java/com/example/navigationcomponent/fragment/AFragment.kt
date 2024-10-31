@@ -20,10 +20,12 @@ class AFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentABinding.inflate(inflater, container, false)
 
+        val bundle = Bundle()
+        bundle.putString("message", "Hello from fragment A")
         binding.buttonA.setOnClickListener {
             val controller =
                 activity?.let { Navigation.findNavController(it, R.id.fragmentContainerView) }
-            controller?.navigate(R.id.action_AFragment_to_BFragment)
+            controller?.navigate(R.id.action_AFragment_to_BFragment, bundle)
         }
         return binding.root
 

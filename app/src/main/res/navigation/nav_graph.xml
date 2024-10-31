@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_a" >
         <action
             android:id="@+id/action_AFragment_to_BFragment"
-            app:destination="@id/BFragment" />
+            app:destination="@id/BFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/BFragment"
@@ -21,6 +22,11 @@
         tools:layout="@layout/fragment_b" >
         <action
             android:id="@+id/action_BFragment_to_AFragment"
-            app:destination="@id/AFragment" />
+            app:destination="@id/AFragment"
+            app:enterAnim="@android:anim/slide_out_right" />
     </fragment>
+    <argument
+        android:name="message"
+        app:argType="string"
+        android:defaultValue="Hello World" />
 </navigation>
