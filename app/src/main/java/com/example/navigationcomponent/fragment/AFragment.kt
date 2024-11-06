@@ -24,7 +24,7 @@ class AFragment : Fragment() {
         bundle.putString("message", "Hello from fragment A")
         binding.buttonA.setOnClickListener {
             val controller =
-                activity?.let { Navigation.findNavController(it, R.id.fragmentContainerView) }
+                activity?.let { Navigation.findNavController(it, R.id.fragment) }
             controller?.navigate(R.id.action_AFragment_to_BFragment, bundle)
         }
         return binding.root
